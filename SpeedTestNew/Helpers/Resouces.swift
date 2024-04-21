@@ -23,18 +23,15 @@ enum Settings {
 		enum TabBar {
 			static func title(for tab: Tabs) -> String {
 				switch tab {
-				case .overview: return "Overview"
+				case .overview: return "Test"
 				case .session: return "Session"
-				case .progress: return "Progress"
-				case .settings: return "Settings"
 				}
 			}
 		}
 
 		enum NavBar {
-			//static let overview = "Today"
+			static let speed = "Two Speed Test"
 			static let session = "Internet Speed Test"
-			//static let progress = "Workout Progress"
 			static let settings = "Settings"
 		}
 
@@ -60,18 +57,6 @@ enum Settings {
 			static let totalSteps = "Min speed"  // 4  мин
 			static let stepsCounter = "Steps Counter" // top right
 		}
-
-		enum Progress {
-			static let navBarLeft = "Export"
-			static let navBarRight = "Details"
-
-			static let dailyPerformance = "Daily performance"
-			static let last7Days = "Last 7 days"
-			static let monthlyPerformance = "Monthly performance"
-			static let last10Months = "Last 10 months"
-		}
-
-		enum Settings {}
 	}
 
 	enum Images {
@@ -80,8 +65,7 @@ enum Settings {
 				switch tab {
 				case .overview: return UIImage(named: "overview_tab")
 				case .session: return UIImage(named: "session_tab")
-				case .progress: return UIImage(named: "progress_tab")
-				case .settings: return UIImage(named: "settings_tab")
+				
 				}
 			}
 		}
@@ -89,12 +73,6 @@ enum Settings {
 		enum Common {
 			static let downArrow = UIImage(named: "down_arrow")
 			static let add = UIImage(named: "add_button")
-		}
-
-		enum Overview {
-			static let checkmarkNotDone = UIImage(named: "checkmark_not_done")
-			static let checkmarkDone = UIImage(named: "checkmark_done")
-			static let rightArrow = UIImage(named: "right_arrow")
 		}
 
 		enum Session {

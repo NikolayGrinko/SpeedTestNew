@@ -30,6 +30,6 @@ class WABaseView: UIView {
 	func constaintViews() {}
 	
 	func configureAppearance() {
-		backgroundColor = .white
+		backgroundColor = UIColor(named: "backgroundColor")
 	}
 }

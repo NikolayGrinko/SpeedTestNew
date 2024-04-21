@@ -11,8 +11,6 @@ import UIKit
 enum Tabs: Int, CaseIterable {
 	case overview
 	case session
-	case progress
-	case settings
 }
 class CustomTabBarController: UITabBarController {
     
@@ -30,17 +28,16 @@ class CustomTabBarController: UITabBarController {
 		let vc1 = UINavigationController(rootViewController: SessionController())
 		let vc2 = UINavigationController(rootViewController: SecondViewController())
 		
-     // let firstVC = ViewController()
-        vc1.tabBarItem.title = "Speed"
+
+        vc1.tabBarItem.title = "Session"
         vc1.tabBarItem.image = UIImage(systemName: "timer.circle.fill")
         
-        //let secondVC = SecondViewController()
-        vc2.tabBarItem.title = "Settings"
+	
+        vc2.tabBarItem.title = "Speed"
         vc2.tabBarItem.image = UIImage(systemName: "gearshape.fill")
         
         setViewControllers([vc1, vc2], animated: true)
     }
-	
 }
 
 

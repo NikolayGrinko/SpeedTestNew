@@ -30,7 +30,7 @@ class WABaseController: UIViewController {
 	func constraintViews() {}
 
 	func configureAppearance() {
-		view.backgroundColor = Settings.Colors.background
+		view.backgroundColor = UIColor(named: "backgroundColor")
 	}
 
 	func navBarLeftButtonHandler() {
