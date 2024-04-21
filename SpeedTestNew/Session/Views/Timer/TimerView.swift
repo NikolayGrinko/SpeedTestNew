@@ -5,6 +5,7 @@
 //  Created by Николай Гринько on 14.04.2024.
 //
 
+
 import UIKit
 
 enum TimerState {
@@ -17,34 +18,34 @@ final class TimerView: WABaseInfoView {
 
 	private let elapsedTimeLable: UILabel = {
 		let lable = UILabel()
-		lable.text = R.Strings.Session.elapsedTime
-		lable.font = R.Fonts.helvelticaRegular(with: 14)
-		lable.textColor = R.Colors.inactive
+		lable.text = Settings.Strings.Session.elapsedTime
+		lable.font = Settings.Fonts.helvelticaRegular(with: 14)
+		lable.textColor = Settings.Colors.inactive
 		lable.textAlignment = .center
 		return lable
 	}()
 
 	private let elapsedTimeValueLable: UILabel = {
 		let lable = UILabel()
-		lable.font = R.Fonts.helvelticaRegular(with: 46)
-		lable.textColor = R.Colors.titleGray
+		lable.font = Settings.Fonts.helvelticaRegular(with: 46)
+		lable.textColor = Settings.Colors.titleGray
 		lable.textAlignment = .center
 		return lable
 	}()
 
 	private let remainingTimeLable: UILabel = {
 		let lable = UILabel()
-		lable.text = R.Strings.Session.remainingTime
-		lable.font = R.Fonts.helvelticaRegular(with: 13)
-		lable.textColor = R.Colors.inactive
+		lable.text = Settings.Strings.Session.remainingTime
+		lable.font = Settings.Fonts.helvelticaRegular(with: 13)
+		lable.textColor = Settings.Colors.inactive
 		lable.textAlignment = .center
 		return lable
 	}()
 
 	private let remainingTimeValueLable: UILabel = {
 		let lable = UILabel()
-		lable.font = R.Fonts.helvelticaRegular(with: 13)
-		lable.textColor = R.Colors.titleGray
+		lable.font = Settings.Fonts.helvelticaRegular(with: 13)
+		lable.textColor = Settings.Colors.titleGray
 		lable.textAlignment = .center
 		return lable
 	}()
@@ -69,7 +70,7 @@ final class TimerView: WABaseInfoView {
 
 	private let bottomSeparatorView: UIView = {
 		let view = UIView()
-		view.backgroundColor = R.Colors.separator
+		view.backgroundColor = Settings.Colors.separator
 		return view
 	}()
 
@@ -77,7 +78,7 @@ final class TimerView: WABaseInfoView {
 
 	private var timer = Timer()
 	private var timerProgress: CGFloat = 0
-	private var timerDuration = 0.0
+	private var timerDuration = 10.0
 
 	var state: TimerState = .isStopped
 	var callBack: (() -> Void)?
@@ -92,9 +93,9 @@ final class TimerView: WABaseInfoView {
 
 		elapsedTimeValueLable.text = getDisplayedString(from: Int(tempCurrentValue))
 		remainingTimeValueLable.text = getDisplayedString(from: Int(duration) - Int(tempCurrentValue))
-		completedPercentView.configure(with: R.Strings.Session.completed.uppercased(),
+		completedPercentView.configure(with: Settings.Strings.Session.completed.uppercased(),
 									   andValue: roundedPercent)
-		remainigPercetnView.configure(with: R.Strings.Session.remaining.uppercased(),
+		remainigPercetnView.configure(with: Settings.Strings.Session.remaining.uppercased(),
 									  andValue: 100 - roundedPercent)
 		progressView.drawProgress(with: CGFloat(percent))
 	}
@@ -102,11 +103,11 @@ final class TimerView: WABaseInfoView {
 	func startTimer() {
 		timer.invalidate()
 
-		timer = Timer.scheduledTimer(withTimeInterval: 0.01,
+		timer = Timer.scheduledTimer(withTimeInterval: 0.08,
 									 repeats: true,
 									 block: { [weak self] timer in
 			guard let self = self else { return }
-			self.timerProgress += 0.01
+			self.timerProgress += 1
 
 			if self.timerProgress > self.timerDuration {
 				self.timerProgress = self.timerDuration
@@ -122,6 +123,7 @@ final class TimerView: WABaseInfoView {
 	}
 
 	func stopTimer() {
+		
 		guard self.timerProgress > 0 else { return }
 		timer.invalidate()
 
@@ -201,8 +203,11 @@ private extension TimerView {
 		let hoursStr = hours < 10 ? "0\(hours)" : "\(hours)"
 
 		return hours == 0
-			? [minutesStr, secondsStr].joined(separator: ":")
-			: [hoursStr, minutesStr, secondsStr].joined(separator: ":")
+			? [minutesStr, secondsStr].joined(separator: "")
+			: [hoursStr, minutesStr, secondsStr].joined(separator: "")
 	}
 }
+
+
+
 

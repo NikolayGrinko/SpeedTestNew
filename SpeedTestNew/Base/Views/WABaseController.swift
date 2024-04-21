@@ -1,9 +1,10 @@
 //
 //  WABaseController.swift
-//  SpeedTestNew
+//  WorkoutApp
 //
 //  Created by Николай Гринько on 14.04.2024.
 //
+
 
 import UIKit
 
@@ -29,7 +30,7 @@ class WABaseController: UIViewController {
 	func constraintViews() {}
 
 	func configureAppearance() {
-		view.backgroundColor = R.Colors.background
+		view.backgroundColor = Settings.Colors.background
 	}
 
 	func navBarLeftButtonHandler() {
@@ -45,9 +46,9 @@ extension WABaseController {
 	func addNavBarButton(at position: NavBarPosition, with title: String) {
 		let button = UIButton(type: .system)
 		button.setTitle(title, for: .normal)
-		button.setTitleColor(R.Colors.active, for: .normal)
-		button.setTitleColor(R.Colors.inactive, for: .disabled)
-		button.titleLabel?.font = R.Fonts.helvelticaRegular(with: 17)
+		button.setTitleColor(Settings.Colors.active, for: .normal)
+		button.setTitleColor(Settings.Colors.inactive, for: .disabled)
+		button.titleLabel?.font = Settings.Fonts.helvelticaRegular(with: 17)
 
 		switch position {
 		case .left:

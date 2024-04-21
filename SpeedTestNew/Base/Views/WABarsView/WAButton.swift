@@ -24,7 +24,7 @@ final class WAButton: UIButton {
 
 	private let iconView: UIImageView = {
 		let view = UIImageView()
-		view.image = R.Images.Common.downArrow?.withRenderingMode(.alwaysTemplate)
+		view.image = Settings.Images.Common.downArrow?.withRenderingMode(.alwaysTemplate)
 		return view
 	}()
 
@@ -80,16 +80,16 @@ private extension WAButton {
 	func configureAppearance() {
 		switch type {
 		case .primary:
-			lable.textColor = R.Colors.inactive
-			lable.font = R.Fonts.helvelticaRegular(with: 13)
-			iconView.tintColor = R.Colors.inactive
+			lable.textColor = Settings.Colors.inactive
+			lable.font = Settings.Fonts.helvelticaRegular(with: 13)
+			iconView.tintColor = Settings.Colors.inactive
 
 		case .secondary:
-			backgroundColor = R.Colors.secondary
+			backgroundColor = Settings.Colors.secondary
 			layer.cornerRadius = 14
-			lable.textColor = R.Colors.active
-			lable.font = R.Fonts.helvelticaRegular(with: 15)
-			iconView.tintColor = R.Colors.active
+			lable.textColor = Settings.Colors.active
+			lable.font = Settings.Fonts.helvelticaRegular(with: 15)
+			iconView.tintColor = Settings.Colors.active
 		}
 
 		makeSystem(self)

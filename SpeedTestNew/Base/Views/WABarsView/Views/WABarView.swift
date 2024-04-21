@@ -22,22 +22,22 @@ final class WABarView: WABaseView {
 
 	private let valueLabel: UILabel = {
 		let label = UILabel()
-		label.font = R.Fonts.helvelticaRegular(with: 13)
-		label.textColor = R.Colors.active
+		label.font = Settings.Fonts.helvelticaRegular(with: 13)
+		label.textColor = Settings.Colors.active
 		return label
 	}()
 
 	private let barView: UIView = {
 		let view = UIView()
-		view.backgroundColor = R.Colors.active
+		view.backgroundColor = Settings.Colors.active
 		view.layer.cornerRadius = 2.5
 		return view
 	}()
 
 	private let titleLabel: UILabel = {
 		let label = UILabel()
-		label.font = R.Fonts.helvelticaRegular(with: 9)
-		label.textColor = R.Colors.inactive
+		label.font = Settings.Fonts.helvelticaRegular(with: 9)
+		label.textColor = Settings.Colors.inactive
 		return label
 	}()
 

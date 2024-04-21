@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum R {
+enum Settings {
 	enum Colors {
 		static let active = UIColor(hexString: "#437BFE")
 		static let inactive = UIColor(hexString: "#929DA5")
@@ -32,9 +32,9 @@ enum R {
 		}
 
 		enum NavBar {
-			static let overview = "Today"
-			static let session = "High Intensity Cardio"
-			static let progress = "Workout Progress"
+			//static let overview = "Today"
+			static let session = "Internet Speed Test"
+			//static let progress = "Workout Progress"
 			static let settings = "Settings"
 		}
 
@@ -47,18 +47,18 @@ enum R {
 			static let navBarPause = "Pause"
 			static let navBarFinish = "Finish"
 
-			static let elapsedTime = "Elapsed Time"
+			static let elapsedTime = "Speed Test"
 			static let remainingTime = "Remaining Time"
 			static let completed = "Completed"
 			static let remaining = "Remaining"
 
-			static let workoutStats = "Workout stats"
-			static let averagePace = "Average pace"
-			static let heartRate = "Heart rate"
-			static let totalDistance = "Total distance"
-			static let totalSteps = "Total steps"
-
-			static let stepsCounter = "Steps Counter"
+			static let workoutStats = "Stats speed"  //  top left
+			static let averageSpeed = "Average speed" // 1 <
+			static let averagePace = "Average time" // 2
+			
+			static let totalDistance = "Max speed" // 3   макс
+			static let totalSteps = "Min speed"  // 4  мин
+			static let stepsCounter = "Steps Counter" // top right
 		}
 
 		enum Progress {
@@ -99,10 +99,11 @@ enum R {
 
 		enum Session {
 			enum Stats {
-				static let averagePace = UIImage(named: "stats_averagePace")
-				static let heartRate = UIImage(named: "stats_heartRate")
-				static let totalDistance = UIImage(named: "stats_totalDistance")
-				static let totalSteps = UIImage(named: "stats_totalSteps")
+				static let heartRate = UIImage(named: "stats_averagePace")
+				static let averagePace = UIImage(named: "clock")
+				static let totalDistance = UIImage(named: "max")
+				static let totalSteps = UIImage(named: "min")
+				
 			}
 		}
 	}

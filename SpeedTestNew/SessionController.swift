@@ -9,10 +9,10 @@ import UIKit
 
 final class SessionController: WABaseController {
 	private let timerView = TimerView()
-	private let statsView = StatsView(with: R.Strings.Session.workoutStats)
-	private let stepsView = StepsView(with: R.Strings.Session.stepsCounter)
+	private let statsView = StatsView(with: Settings.Strings.Session.workoutStats)
+	private let stepsView = StepsView(with: Settings.Strings.Session.stepsCounter)
 
-	private let timerDuration = 5.0
+	private let timerDuration = 40.0
 
 	override func navBarLeftButtonHandler() {
 		if timerView.state == .isStopped {
@@ -25,7 +25,7 @@ final class SessionController: WABaseController {
 		addNavBarButton(
 			at: .left,
 			with: timerView.state == .isRuning
-				? R.Strings.Session.navBarPause : R.Strings.Session.navBarStart
+				? Settings.Strings.Session.navBarPause : Settings.Strings.Session.navBarStart
 		)
 	}
 
@@ -33,7 +33,7 @@ final class SessionController: WABaseController {
 		timerView.stopTimer()
 		timerView.state = .isStopped
 
-		addNavBarButton(at: .left, with: R.Strings.Session.navBarStart)
+		addNavBarButton(at: .left, with: Settings.Strings.Session.navBarStart)
 	}
 }
 
@@ -68,25 +68,25 @@ extension SessionController {
 	override func configureAppearance() {
 		super.configureAppearance()
 
-		title = R.Strings.NavBar.session
-		navigationController?.tabBarItem.title = R.Strings.TabBar.title(for: .session)
+		title = Settings.Strings.NavBar.session
+		navigationController?.tabBarItem.title = Settings.Strings.TabBar.title(for: .session)
 
-		addNavBarButton(at: .left, with: R.Strings.Session.navBarStart)
-		addNavBarButton(at: .right, with: R.Strings.Session.navBarFinish)
+		addNavBarButton(at: .left, with: Settings.Strings.Session.navBarStart)
+		addNavBarButton(at: .right, with: Settings.Strings.Session.navBarFinish)
 
 		timerView.configure(with: timerDuration, progress: 0)
 		timerView.callBack = { [weak self] in
 			self?.navBarRightButtonHandler()
 		}
 
-		statsView.configure(with: [.heartRate(value: "155"),
-								   .averagePace(value: "8'20''"),
-								   .totalSteps(value: "7,682"),
-								   .totalDistance(value: "8.25")])
+		statsView.configure(with: [.heartRate(value: "28.8"),
+								   .averagePace(value: "04.3'"),
+								   .totalDistance(value: "29.8"),
+								   .totalSteps(value: "12.7"),])
 
-		stepsView.configure(with: [.init(value: "8k", heightMultiplier: 1, title: "2/14"),
-								   .init(value: "7k", heightMultiplier: 0.8, title: "2/15"),
-								   .init(value: "5k", heightMultiplier: 0.6, title: "2/16"),
-								   .init(value: "6k", heightMultiplier: 0.3, title: "2/17")])
+		stepsView.configure(with: [.init(value: "28", heightMultiplier: 1, title: "2.04"),
+								   .init(value: "25", heightMultiplier: 0.8, title: "3.04"),
+								   .init(value: "27", heightMultiplier: 0.9, title: "11/04"),
+								   .init(value: "23", heightMultiplier: 0.7, title: "15.04")])
 	}
 }

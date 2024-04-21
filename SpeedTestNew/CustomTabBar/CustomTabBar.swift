@@ -11,7 +11,7 @@ import UIKit
 final class CustomTabBar: UITabBar {
 	
 	private let plusButton = PlusButton(type: .system)
-	
+	private let plusVC = SecondViewController()
 	override func draw(_ rect: CGRect) {
 		configureShape()
 	}
@@ -46,7 +46,10 @@ final class CustomTabBar: UITabBar {
 	
 	@objc func tapButton() {
 		print("Tap Button PLUS")
+		
 	}
+	
+	
 	
 	//MARK: Hit test
 	override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {

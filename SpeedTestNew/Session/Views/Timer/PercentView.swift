@@ -20,16 +20,16 @@ extension TimerView {
 
 		private let percentLabel: UILabel = {
 			let label = UILabel()
-			label.font = R.Fonts.helvelticaRegular(with: 23)
-			label.textColor = R.Colors.titleGray
+			label.font = Settings.Fonts.helvelticaRegular(with: 23)
+			label.textColor = Settings.Colors.titleGray
 			label.textAlignment = .center
 			return label
 		}()
 
 		private let subtitleLabel: UILabel = {
 			let label = UILabel()
-			label.font = R.Fonts.helvelticaRegular(with: 10)
-			label.textColor = R.Colors.inactive
+			label.font = Settings.Fonts.helvelticaRegular(with: 10)
+			label.textColor = Settings.Colors.inactive
 			label.textAlignment = .center
 			return label
 		}()

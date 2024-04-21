@@ -8,29 +8,29 @@
 import UIKit
 
 enum StatsItem {
-	case averagePace(value: String)
 	case heartRate(value: String)
+	case averagePace(value: String)
 	case totalDistance(value: String)
 	case totalSteps(value: String)
 
 	var data: StatsItemView.ItemData {
 		switch self {
+			case .heartRate(let value):
+				return .init(image: Settings.Images.Session.Stats.heartRate,
+							 value: value + " Мb/c",
+							 title: Settings.Strings.Session.averageSpeed)
 		case .averagePace(let value):
-			return .init(image: R.Images.Session.Stats.averagePace,
-						 value: value + " / km",
-						 title: R.Strings.Session.averagePace)
-		case .heartRate(let value):
-			return .init(image: R.Images.Session.Stats.heartRate,
-						 value: value + " bpm",
-						 title: R.Strings.Session.heartRate)
+			return .init(image: Settings.Images.Session.Stats.averagePace,
+						 value: value + " / сек",
+						 title: Settings.Strings.Session.averagePace)
 		case .totalDistance(let value):
-			return .init(image: R.Images.Session.Stats.totalDistance,
-						 value: value + " km",
-						 title: R.Strings.Session.totalDistance)
+			return .init(image: Settings.Images.Session.Stats.totalDistance,
+						 value: value + " Мb/c",
+						 title: Settings.Strings.Session.totalDistance)
 		case .totalSteps(let value):
-			return .init(image: R.Images.Session.Stats.totalSteps,
-						 value: value,
-						 title: R.Strings.Session.totalSteps)
+			return .init(image: Settings.Images.Session.Stats.totalSteps,
+						 value: value + " Мb/c",
+						 title: Settings.Strings.Session.totalSteps)
 		}
 	}
 }
@@ -46,15 +46,15 @@ final class StatsItemView: WABaseView {
 
 	private let valueLabel: UILabel = {
 		let label = UILabel()
-		label.font = R.Fonts.helvelticaRegular(with: 17)
-		label.textColor = R.Colors.titleGray
+		label.font = Settings.Fonts.helvelticaRegular(with: 17)
+		label.textColor = Settings.Colors.titleGray
 		return label
 	}()
 
 	private let titleLabel: UILabel = {
 		let label = UILabel()
-		label.font = R.Fonts.helvelticaRegular(with: 10)
-		label.textColor = R.Colors.inactive
+		label.font = Settings.Fonts.helvelticaRegular(with: 10)
+		label.textColor = Settings.Colors.inactive
 		return label
 	}()
 
