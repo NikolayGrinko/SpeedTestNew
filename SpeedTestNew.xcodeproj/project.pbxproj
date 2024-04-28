@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		205BE66B2BD478C700B319FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 205BE66A2BD478C700B319FA /* Assets.xcassets */; };
+		2062E3872BD6409300FF4635 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2062E3862BD6409300FF4635 /* Extension.swift */; };
+		2062E3892BD640BA00FF4635 /* Extension + UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2062E3882BD640BA00FF4635 /* Extension + UIImage.swift */; };
+		2062E38C2BD6414800FF4635 /* CustomTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2062E38B2BD6414800FF4635 /* CustomTextfield.swift */; };
 		20691A332BCC660B00C61A37 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20691A322BCC660B00C61A37 /* UIColor + ext.swift */; };
 		20691A352BCC662000C61A37 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20691A342BCC662000C61A37 /* UIView + ext.swift */; };
 		20691A3A2BCC666A00C61A37 /* Resouces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20691A392BCC666A00C61A37 /* Resouces.swift */; };
@@ -36,6 +39,9 @@
 
 /* Begin PBXFileReference section */
 		205BE66A2BD478C700B319FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../ViewControllers/Assets.xcassets; sourceTree = "<group>"; };
+		2062E3862BD6409300FF4635 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		2062E3882BD640BA00FF4635 /* Extension + UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImage.swift"; sourceTree = "<group>"; };
+		2062E38B2BD6414800FF4635 /* CustomTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextfield.swift; sourceTree = "<group>"; };
 		20691A322BCC660B00C61A37 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		20691A342BCC662000C61A37 /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		20691A392BCC666A00C61A37 /* Resouces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resouces.swift; sourceTree = "<group>"; };
@@ -75,11 +81,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2062E38A2BD640D900FF4635 /* CustomTextFields */ = {
+			isa = PBXGroup;
+			children = (
+				2062E38B2BD6414800FF4635 /* CustomTextfield.swift */,
+			);
+			path = CustomTextFields;
+			sourceTree = "<group>";
+		};
 		20691A312BCC65EB00C61A37 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				20691A322BCC660B00C61A37 /* UIColor + ext.swift */,
 				20691A342BCC662000C61A37 /* UIView + ext.swift */,
+				2062E3862BD6409300FF4635 /* Extension.swift */,
+				2062E3882BD640BA00FF4635 /* Extension + UIImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -227,6 +243,7 @@
 				207F6B292BC87AA600ABC1A8 /* Properties */,
 				207F6B282BC879AA00ABC1A8 /* CustomTabBar */,
 				20691A5E2BCC855200C61A37 /* PlusButton */,
+				2062E38A2BD640D900FF4635 /* CustomTextFields */,
 				207F6B272BC8798500ABC1A8 /* ViewControllers */,
 				206BE3A42BC87AD300DD7CC5 /* Settings */,
 			);
@@ -337,6 +354,7 @@
 				207F6B102BC8780900ABC1A8 /* SessionController.swift in Sources */,
 				207F6B232BC8784D00ABC1A8 /* CustomTabBarController.swift in Sources */,
 				20691A4A2BCC693700C61A37 /* StepsView.swift in Sources */,
+				2062E3892BD640BA00FF4635 /* Extension + UIImage.swift in Sources */,
 				20691A502BCC6EAA00C61A37 /* WABarsView.swift in Sources */,
 				20691A592BCC702800C61A37 /* WABaseView.swift in Sources */,
 				20691A432BCC687A00C61A37 /* PercentView.swift in Sources */,
@@ -345,6 +363,7 @@
 				20691A5D2BCC71E400C61A37 /* StatsItemView.swift in Sources */,
 				20691A3A2BCC666A00C61A37 /* Resouces.swift in Sources */,
 				207F6B262BC8785B00ABC1A8 /* PlusButton.swift in Sources */,
+				2062E3872BD6409300FF4635 /* Extension.swift in Sources */,
 				20691A5B2BCC716000C61A37 /* WABaseController.swift in Sources */,
 				20691A542BCC6EE400C61A37 /* WAButton.swift in Sources */,
 				207F6B242BC8784D00ABC1A8 /* CustomTabBar.swift in Sources */,
@@ -352,6 +371,7 @@
 				207F6B0E2BC8780900ABC1A8 /* SceneDelegate.swift in Sources */,
 				20691A332BCC660B00C61A37 /* UIColor + ext.swift in Sources */,
 				20691A412BCC686100C61A37 /* ProgressView.swift in Sources */,
+				2062E38C2BD6414800FF4635 /* CustomTextfield.swift in Sources */,
 				20691A522BCC6ECD00C61A37 /* WABaseInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
