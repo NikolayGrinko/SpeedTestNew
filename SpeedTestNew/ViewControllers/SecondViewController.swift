@@ -62,7 +62,7 @@ class SecondViewController: UIViewController {
 	private let downloadSpeedLabel: UILabel = {
 		let labelDownload = UILabel()
 		labelDownload.text = "Download Speed"
-		labelDownload.frame = CGRect(x: 20, y: 65, width: 150, height: 20)
+		labelDownload.frame = CGRect(x: 30, y: 65, width: 150, height: 20)
 		labelDownload.font = Settings.Fonts.helvelticaRegular(with: 15)
 		labelDownload.textColor = Settings.Colors.inactive
 		return labelDownload
@@ -72,16 +72,16 @@ class SecondViewController: UIViewController {
 	private let textDownloadSpeedLabel: UILabel = {
 		let labelDownload = UILabel()
 		labelDownload.text = "28.8 Mb/c"
-		labelDownload.frame = CGRect(x: 10, y: 20, width: 150, height: 20)
-		labelDownload.font = Settings.Fonts.helvelticaRegular(with: 30)
-		labelDownload.textColor = Settings.Colors.active
+		labelDownload.frame = CGRect(x: 55, y: 20, width: 140, height: 30)
+		labelDownload.font = Settings.Fonts.helvelticaRegular(with: 23)
+		labelDownload.textColor = Settings.Colors.titleGray
 		return labelDownload
 	}()
 	// ++++
 	private let recoilSpeedLabel: UILabel = {
 		let speedLabel = UILabel()
 		speedLabel.text = "Recoil speed"
-		speedLabel.frame = CGRect(x: 35, y: 65, width: 150, height: 20)
+		speedLabel.frame = CGRect(x: 45, y: 65, width: 150, height: 20)
 		speedLabel.font = Settings.Fonts.helvelticaRegular(with: 15)
 		speedLabel.textColor = Settings.Colors.inactive
 		return speedLabel
@@ -90,12 +90,29 @@ class SecondViewController: UIViewController {
 	private let textRecoilSpeedLabel: UILabel = {
 		let labelDownload = UILabel()
 		labelDownload.text = "12.8 Mb/c"
-		labelDownload.frame = CGRect(x: 10, y: 20, width: 150, height: 20)
-		labelDownload.font = Settings.Fonts.helvelticaRegular(with: 30)
-		labelDownload.textColor = Settings.Colors.active
+		labelDownload.frame = CGRect(x: 55, y: 20, width: 140, height: 30)
+		labelDownload.font = Settings.Fonts.helvelticaRegular(with: 23)
+		labelDownload.textColor = Settings.Colors.titleGray
 		return labelDownload
 	}()
 	
+	private let upImageView: UIImageView = {
+		let imageView = UIImageView()
+		imageView.frame = CGRect(x: 5, y: 20, width: 40, height: 40)
+		imageView.tintColor = .red
+		imageView.image = UIImage(systemName: "arrowshape.up.fill")
+		return imageView
+	}()
+	
+	private let downImageView: UIImageView = {
+		let imageView = UIImageView()
+		imageView.frame = CGRect(x: 5, y: 20, width: 40, height: 40)
+		imageView.tintColor = .blue
+		imageView.image = UIImage(systemName: "arrowshape.down.fill")
+		return imageView
+	}()
+	// вверх arrowshape.up.fill
+	// вниз arrowshape.down.fill
 	@objc private func segmentChanged() {
 		MTUserDefaults.shared.theme = Theme(rawValue: segmentControl.selectedSegmentIndex) ?? .background
 		view.window?.overrideUserInterfaceStyle = MTUserDefaults.shared.theme.getUserInterfaceStyle()
@@ -119,8 +136,10 @@ class SecondViewController: UIViewController {
 		view.addSubview(recoilView)
 		downloadView.addSubview(downloadSpeedLabel)
 		downloadView.addSubview(textDownloadSpeedLabel)
+		downloadView.addSubview(upImageView)
 		recoilView.addSubview(recoilSpeedLabel)
 		recoilView.addSubview(textRecoilSpeedLabel)
+		recoilView.addSubview(downImageView)
 		
 		segmentControl.selectedSegmentIndex = MTUserDefaults.shared.theme.rawValue
 	}
@@ -143,12 +162,12 @@ class SecondViewController: UIViewController {
 			downloadView.topAnchor.constraint(equalTo: customTextField.bottomAnchor, constant: 30),
 			downloadView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
 			downloadView.heightAnchor.constraint(equalToConstant: 90),
-			downloadView.widthAnchor.constraint(equalToConstant: 160),
+			downloadView.widthAnchor.constraint(equalToConstant: 180),
 			
 			recoilView.topAnchor.constraint(equalTo: customTextField.bottomAnchor, constant: 30),
 			recoilView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
 			recoilView.heightAnchor.constraint(equalToConstant: 90),
-			recoilView.widthAnchor.constraint(equalToConstant: 160)
+			recoilView.widthAnchor.constraint(equalToConstant: 180)
 			
 		])
 	}
