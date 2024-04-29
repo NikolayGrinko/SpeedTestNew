@@ -1,4 +1,4 @@
-# SpeedTestNew - Приложение аналог "SpeedTest"^ но много еще что надо сделать.
+# SpeedTestNew - Приложение аналог "SpeedTest", но много еще что надо сделать.
 
 <img width="260" alt="Снимок экрана 2024-04-29 в 22 49 57" src="https://github.com/NikolayGrinko/SpeedTestNew/assets/112849355/d5df09ef-7f73-4c6a-b7f1-1884439c5f1d">
 
